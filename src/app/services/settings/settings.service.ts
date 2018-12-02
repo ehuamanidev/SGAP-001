@@ -21,8 +21,6 @@ export class SettingsService {
       this.ajustes = JSON.parse(localStorage.getItem('ajustes'));
     }
 
-    console.log( 'Aplicando tema: ' + this.ajustes.tema );
-
     this.aplicarTema(this.ajustes.tema);
   }
 
@@ -34,8 +32,6 @@ export class SettingsService {
     this._document
       .getElementById('tema')
       .setAttribute('href', this.ajustes.temaUrl);
-
-    console.log(this.ajustes.temaUrl);
   }
 }
 
