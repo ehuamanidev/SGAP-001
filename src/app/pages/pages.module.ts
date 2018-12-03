@@ -12,6 +12,7 @@ import { ChartsModule } from 'ng2-charts';
 import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
 import { CommonModule } from '@angular/common';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { ModeloComponent } from './modelo/modelo.component';
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
         Graficas1Component,
         IncrementadorComponent,
         GraficoDonaComponent,
-        AccountSettingsComponent
+        AccountSettingsComponent,
+        ModeloComponent
     ],
     exports: [
         DashboardComponent,

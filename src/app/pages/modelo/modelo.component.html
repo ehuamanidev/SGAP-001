@@ -1,0 +1,36 @@
+<div class="card">
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-sm stylish-table table-bordered table-hover">
+        <thead class="bg-theme text-white">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Modelo</th>
+            <th scope="col">Clasificación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let m of modelos; let i = index">
+            <tr>
+              <td>{{i + 1}}</td>
+              <td>{{m.marca}}</td>
+              <td>{{m.modelo}}</td>
+              <td>{{m.clasificacion}}</td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+
+      <nav aria-label="Models pagination">
+        <ul class="pagination justify-content-end">
+          <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">Siguiente</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
