@@ -2,7 +2,7 @@
   <div class="card-body">
     <div class="row mb-3">
       <div class="col-6">
-        <span>Gestion de modelos</span>
+        <span>Gestion de cotizaciones</span>
       </div>
       <div class="col-6">
         <div class="row justify-content-end">
@@ -12,24 +12,24 @@
         </div>
       </div>
     </div>
-
+    
     <div class="table-responsive">
       <table class="table table-sm stylish-table table-bordered table-hover">
         <thead class="bg-theme text-white">
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">Marca</th>
-            <th scope="col">Modelo</th>
-            <th scope="col">Clasificación</th>
+            <th scope="col">Cotizaciones</th>
+            <th scope="col">Agencia</th>
+            <th scope="col">Cliente</th>
+            <th scope="col">Vehículo</th>
           </tr>
         </thead>
         <tbody>
-          <ng-container *ngFor="let m of modelos; let i = index">
+          <ng-container *ngFor="let c of cotizaciones">
             <tr>
-              <td>{{i + 1}}</td>
-              <td>{{m.marca}}</td>
-              <td>{{m.modelo}}</td>
-              <td>{{m.clasificacion}}</td>
+              <td>{{c.cotizacion}}</td>
+              <td>{{c.agencia}}</td>
+              <td>{{c.cliente}}</td>
+              <td>{{c.vehiculo}}</td>
             </tr>
           </ng-container>
         </tbody>

@@ -13,6 +13,10 @@ import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.co
 import { CommonModule } from '@angular/common';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { ModeloComponent } from './modelo/modelo.component';
+import { MFormularioComponent } from './modelo/formulario/formulario.component';
+import { MSeguroComponent } from './modelo/formulario/seguro.component';
+import { CGestionComponent } from './cotizacion/gestion/gestion.component';
+import { CFormularioComponent } from './cotizacion/formulario/formulario.component';
 
 @NgModule({
     declarations: [
@@ -23,7 +27,11 @@ import { ModeloComponent } from './modelo/modelo.component';
         IncrementadorComponent,
         GraficoDonaComponent,
         AccountSettingsComponent,
-        ModeloComponent
+        ModeloComponent,
+        MFormularioComponent,
+        MSeguroComponent,
+        CFormularioComponent,
+        CGestionComponent
     ],
     exports: [
         DashboardComponent,
