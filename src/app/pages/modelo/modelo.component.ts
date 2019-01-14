@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModeloService, UsuarioService } from 'src/app/services/service.index';
+import { Modelo } from '../../models/modelo.model';
 
 @Component({
   selector: 'app-modelo',
@@ -7,32 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModeloComponent implements OnInit {
 
-  public modelos = [
-    {
-      marca: 'Mark',
-      modelo: '145',
-      clasificacion: 'Hatchback'
-    },
-    {
-      marca: 'Jacob',
-      modelo: '146',
-      clasificacion: 'Hatchback'
-    },
-    {
-      marca: 'Alfa Romeo',
-      modelo: '147',
-      clasificacion: 'Hatchback'
-    },
-    {
-      marca: 'Larry',
-      modelo: '149',
-      clasificacion: 'Hatchback'
-    }
-  ];
+  cargando: boolean = true;
+  modelos: Array<Modelo> = [];
 
-  constructor() { }
+  constructor(  public _modelo:  ModeloService, public _usuario: UsuarioService ) {
+    this.listAll();
+  }
 
   ngOnInit() {
+  }
+
+  listAll() {
+    this._modelo.listAll( this._usuario.token ).subscribe( data => { this.modelos = data; this.cargando = false; });
   }
 
 }

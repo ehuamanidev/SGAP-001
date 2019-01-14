@@ -8,21 +8,27 @@ import { ModeloComponent } from './modelo/modelo.component';
 import { MFormularioComponent } from './modelo/formulario/formulario.component';
 import { CGestionComponent } from './cotizacion/gestion/gestion.component';
 import { CFormularioComponent } from './cotizacion/formulario/formulario.component';
+import { LoginGuard } from '../services/service.index';
+import { UsuarioComponent } from './usuario/usuario.component';
+import { ClienteComponent } from './cliente/cliente/cliente.component';
 
 const pagesRoutes: Routes = [
     {
         path: '',
         component: PagesComponent,
+        canActivate: [LoginGuard],
         children: [
+            { path: 'usuario', component: UsuarioComponent, data: { title: 'Usuario', routes: ['Configuraciones', 'Usuarios'] } },
+            { path: 'progress', component: ProgressComponent, data: { title: 'Progress', routes: ['Configuraciones', 'Usuarios'] } },
+            { path: 'graficas1', component: Graficas1Component, data: { title: 'Gráficos', routes: ['Configuraciones', 'Usuarios'] } },
+            { path: 'account-settings', component: AccountSettingsComponent, data: { title: 'Cuenta', routes: ['Configuraciones', 'Usuarios'] } },
+            { path: 'modelo', component: ModeloComponent, data: { title: 'Modelos', routes: ['Modelos', 'Usuarios'] } },
+            { path: 'modelo/:id', component: MFormularioComponent, data: { title: 'Modelos', routes: ['Configuraciones', 'Usuarios'] } },
+            { path: 'cotizacion', component: CGestionComponent, data: { title: 'Cotización', routes: ['Gestión', 'Clientes'] } },
+            { path: 'cliente', component: ClienteComponent, data: { title: 'Cliente', routes: ['Gestión', 'Usuarios'] } },
+            { path: 'cotizacion/:id', component: CFormularioComponent, data: { title: 'Cotización', routes: ['Configuraciones', 'Usuarios'] } },
             { path: 'dashboard', component: DashboardComponent },
-            { path: 'progress', component: ProgressComponent },
-            { path: 'graficas1', component: Graficas1Component },
-            { path: 'account-settings', component: AccountSettingsComponent },
-            { path: 'modelo', component: ModeloComponent },
-            { path: 'modelo/:id', component: MFormularioComponent },
-            { path: 'cotizacion', component: CGestionComponent },
-            { path: 'cotizacion/:id', component: CFormularioComponent },
-            { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
+            { path: '', redirectTo: '/dashboard', pathMatch: 'full'}
         ]
     }
 ];

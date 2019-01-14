@@ -17,6 +17,8 @@ import { MFormularioComponent } from './modelo/formulario/formulario.component';
 import { MSeguroComponent } from './modelo/formulario/seguro.component';
 import { CGestionComponent } from './cotizacion/gestion/gestion.component';
 import { CFormularioComponent } from './cotizacion/formulario/formulario.component';
+import { UsuarioComponent } from './usuario/usuario.component';
+import { ClienteComponent } from './cliente/cliente/cliente.component';
 
 @NgModule({
     declarations: [
@@ -31,7 +33,9 @@ import { CFormularioComponent } from './cotizacion/formulario/formulario.compone
         MFormularioComponent,
         MSeguroComponent,
         CFormularioComponent,
-        CGestionComponent
+        CGestionComponent,
+        UsuarioComponent,
+        ClienteComponent
     ],
     exports: [
         DashboardComponent,

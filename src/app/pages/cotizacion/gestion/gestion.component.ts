@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CotizacionService, UsuarioService } from 'src/app/services/service.index';
 
 @Component({
   selector: 'cotizacion-gestion',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CGestionComponent implements OnInit {
 
-  public cotizaciones = [
+  cotizaciones: Array<any> = [
     {
       cotizacion: 'W0690-2018',
       agencia: 'Nepo Keta',
@@ -28,9 +29,19 @@ export class CGestionComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor( public _cotizacion: CotizacionService, public _usuario: UsuarioService) {
+    this.init();
+  }
 
   ngOnInit() {
+  }
+
+  init() {
+    this.listAll();
+  }
+
+  listAll() {
+    this._cotizacion.listAll( this._usuario.token ).subscribe( data => { console.log(data); this.cotizaciones = data; } );
   }
 
 }
